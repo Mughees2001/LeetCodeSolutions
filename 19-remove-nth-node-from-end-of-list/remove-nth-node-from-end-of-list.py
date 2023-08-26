@@ -19,11 +19,9 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
-        print("Size of list:",sizeList(head))
         removeIndex = sizeList(head) - n
         if removeIndex == 0:
             head = head.next
-            return head
         else:
             count = 0
             tempNode = head
@@ -34,7 +32,7 @@ class Solution(object):
                 deleteNode = deleteNode.next
             tempNode.next = deleteNode.next
             deleteNode = None
-            return head
+        return head
 
 
 
