@@ -10,13 +10,13 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        values = inorder_traversal(root)
+        values = inOrderTraversal(root)
         for i in range(1, len(values)):
             if values[i] <= values[i - 1]:
                 return False
         return True
 
-def inorder_traversal(root):
+def inOrderTraversal(root):
         if root is None:
             return []
-        return inorder_traversal(root.left) + [root.val] + inorder_traversal(root.right)
+        return inOrderTraversal(root.left) + [root.val] + inOrderTraversal(root.right)
